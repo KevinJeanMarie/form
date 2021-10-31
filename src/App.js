@@ -33,6 +33,8 @@ handleEmailChange = (e) => {
 //8 condition
     if (regex) {
       this.setState({emailIsValid : true})
+    } else {
+      this.setState({emailIsValid: false})
     }
 }
 
@@ -41,17 +43,38 @@ handlePasswordChange = (e) => {
 
   if (e.target.value.length > 5) {
     this.setState ({passwordIsValid: true})
+  } else {
+    this.setState({passwordIsValid : false})
   }
 }
 
-handleRememberMeChange = () => {
+handleRememberMeChange = (e) => {
+  //console.log(e)
+  if (e.target.checked){
   this.setState({rememberMe: true})
+} else {
+  this.setState({rememberMe: false})
+
+}
 }
 
 onSubmit = (e) => {
   e.preventDefault()
+
+
+  if (this.state.emailIsValid && this.state.passwordIsValid) {
+    this.setState({ isSubmitted: true })
+
+  }
 }
 
+
+handleFirstName = (e) => {
+  this.setState({ firstName: e.target.value })
+}
+handleLastName = (e) => {
+  this.setState({ lastName: e.target.value })
+}
 // //1 render pour afficher // 4 définir l'evenement onChange et handlechange pour modifier dans la value 
 render(){
   return(
