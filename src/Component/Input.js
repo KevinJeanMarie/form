@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Input from './Input'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-class Input extends Component {
+
+class Input extends React.Component {
     render() {
 
       const { onChangeMail, onChangePassword, onChangeRememberMe, onChangeFirstName, onChangeLastName, onSubmit } = this.props

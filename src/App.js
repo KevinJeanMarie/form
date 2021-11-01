@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import Input from "./Component/Input"
 
 class App extends React.Component {
   constructor(){
@@ -82,27 +83,21 @@ render(){
     //rajouter input pour nom prenom
   
 //2 
-
-<form>
+<form class="was-validated">
   <div class="mb-3">
     <div class="col-4">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email"
-     class="form-control"
-     id="exampleInputEmail1"
+    <input type="email" class="form-control is invalid" id="exampleInputEmail1" placeholder="Enter email..." required
      aria-describedby="emailHelp"
      onChange={this.handleEmailChange}>
      </input>
-    {/* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> */}
   </div>
   </div>
 
   <div class="mb-3">
   <div class="col-4">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password"
-     class="form-control" 
-     id="exampleInputPassword1"
+    <input type="password"class="form-control is invalid" id="exampleInputPassword1" placeholder="Enter password..." required
      onChange={this.handlePasswordChange}>
      </input>
   </div>
@@ -115,10 +110,10 @@ render(){
   <button type="submit"
   onChange={this.handleRememberMeChange}
    class="btn btn-primary">Submit</button>
-</form>
-)
-  }
-}
+   </form>
+
+  
+  )}}
 
 
 export default App;
